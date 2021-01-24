@@ -49,6 +49,21 @@ export default [
     }
   },
 
+  // 空列表接口
+  {
+    url: 'http://mockjs.test.cn/example/empty',
+    type: 'get',
+    response: config => {
+      return {
+        code: '0000',
+        data: {
+          total: 0,
+          list: []
+        }
+      }
+    }
+  },
+
   // 删除接口
   {
     url: 'http://mockjs.test.cn/example/delete',
@@ -102,8 +117,7 @@ export default [
       const data = config.body
       if (!data.id) {
         List = [Object.assign(data, {
-          id: toAnyString(),
-          importance: Number(data.importance)
+          id: toAnyString()
         })].concat(List)
         return {
           code: '0000',
@@ -113,9 +127,7 @@ export default [
         List.map(item => {
           if (item.id === data.id) {
             for (const key in item) {
-              if (key === 'importance') {
-                item[key] = Number(data[key])
-              } else {
+              if (data[key]) {
                 item[key] = data[key]
               }
             }

@@ -18,6 +18,10 @@ import './vant' // 引入vant
 
 import './components' // 引入全局组件
 
+import { pageLoaing } from '@/utils/common'
+Vue.prototype.$pageLoaing = pageLoaing
+
+// 用于路由缓存
 import VuePageStack from 'vue-page-stack'
 Vue.use(VuePageStack, { router, name: 'VuePageStack', keyName: 'stack-key' })
 

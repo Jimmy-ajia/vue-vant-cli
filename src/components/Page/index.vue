@@ -1,5 +1,5 @@
 <template>
-  <div class="page-wrap">
+  <div>
     <van-nav-bar
       v-if="showNav"
       left-arrow

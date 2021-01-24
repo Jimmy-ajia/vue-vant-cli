@@ -1,7 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 import config from './config'
-import { ResetMessage } from '_c/ResetMessage'
+import { Toast } from 'vant'
 
 export const PATH_URL = config.base_url[process.env.VUE_APP_CURENV]
 
@@ -32,12 +32,12 @@ service.interceptors.response.use(
     if (response.data.code === config.result_code) {
       return response.data
     } else {
-      ResetMessage.error(response.data.message)
+      Toast.fail(response.data.message)
     }
   },
   error => {
     console.log('err' + error) // for debug
-    ResetMessage.error(error.message)
+    Toast.fail(error.message)
     return Promise.reject(error)
   }
 )

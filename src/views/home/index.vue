@@ -19,6 +19,11 @@
         </van-cell-group>
         <van-cell-group title="功能组件">
           <van-cell title="Tabbar组件" is-link to="/tabbar-demo" />
+          <van-cell title="Qrcode组件" is-link to="/qrcode-demo" />
+          <van-cell title="RefreshLoad组件" is-link to="/refresh-load" />
+        </van-cell-group>
+        <van-cell-group title="综合示例">
+          <van-cell title="列表增删改" is-link to="/example" />
         </van-cell-group>
       </tabbar-item>
     </tabbar>
@@ -38,7 +43,7 @@ export default {
       active: 'doc',
       tabbarList: [
         {
-          label: '文档',
+          label: '指南',
           name: 'doc',
           icon: 'coupon-o'
         },
